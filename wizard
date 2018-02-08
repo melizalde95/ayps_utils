@@ -1,0 +1,177 @@
+#!/bin/bash
+
+#[START] Verificacion e instalacion de archivo requirements
+check_and_install() {
+    #Se realiza la verificacion de la existencia de los paquetes 
+    #descritos en el archivo requirements. Solo se instalan si no
+    #se encuentran listados
+
+        diff <(cat "$REQUIREMENTS" | sort) <(cat "$REQUIREMENTS" | xargs apt list --installed 2> /dev/null | awk -F "/" '{ print $1 }' | tail -n +2 | sort) &> /dev/null
+
+        if [[ "$?" == 0 ]]
+        then
+            echo "Info: Los paquetes ya se encontraban instalados"
+        else
+            cat "$REQUIREMENTS" | xargs sudo apt install -y
+        fi
+}
+#[END] Verificacion e instalacion de archivo requirements
+
+#[START] Construccion de banners
+initial_banner() {
+    echo "===================="
+    echo "Iniciando el wizard"
+    echo "===================="
+}
+
+final_banner() {
+    echo "==================="
+    echo "Finalizo wizard"
+    echo "==================="
+}
+
+exit_banner() {
+    EXIT_SIGNAL="$1"
+    ERROR_MESSAGE="$2"
+    
+    if [[ $EXIT_SIGNAL == 0 ]]
+    then
+        final_banner
+    else
+        echo "Ocurrieron errores durante el proceso de instalacion."
+        printf "Error: %s\n" "$ERROR_MESSAGE"
+        final_banner
+    fi
+    exit $EXIT_SIGNAL
+}
+#[END] Construccion de banners
+
+
+#[START] Definicion de numeros de errores
+E_FILENOTFOUND=100
+E_EMPTYFILE=101
+#[END] Definicion de numeros de errores
+
+install_flow() {
+    #[START] Validacion de archivo requirements
+    if [ ! -e "$REQUIREMENTS" ]
+    then    
+        exit_banner "$E_FILENOTFOUND" "No existe el archivo \"$REQUIREMENTS\""
+    elif [ ! -s "$REQUIREMENTS" ]
+    then
+        exit_banner "$E_EMPTYFILE" "El archivo \"$REQUIREMENTS\" esta vacio"
+    else
+        check_and_install
+    fi
+    #[END] Validacion de archivo requirements
+}
+
+update_sl_flow() {
+    if [ ! -e "procedimientos" ]
+    then
+        exit_banner "$E_FILENOTFOUND" "No existe el archivo \"procedimientos\""
+    else
+        echo "Info: realizando los procedimientos"
+        ./procedimientos
+        exit_banner 0
+    fi
+}
+
+interactive_flow() {
+    while :
+    do
+        echo -e "\nModo interactivo\n"
+        echo -e "Lista de opciones: \n\t -h \n\t -f \n\t -u \n\t e \n\t --help \n\t --file \n\t --update \n\t exit \n"
+        read -p "Ingrese la opcion deseada: " OPCION
+
+        case "$OPCION" in
+            -f | --file ) 
+                
+                read -p "Ingrese la ruta del archivo requirements: " REQUIREMENTS
+                install_flow
+            ;;
+            -u | --update )
+                update_sl_flow
+            ;;
+            e | exit )
+                exit_banner 0
+            ;;
+            -h | --help )
+                echo "Modo de empleo: ./$(basename $0) OPCION [FICHERO]"
+                echo "Instala los paquetes que se encuentran listados en un archivo de requisitos."
+                echo "En caso de ya existir instalados, se avisa al usuario."
+                echo -e "\nOpciones: "
+                echo "  -f, --file      se necesita un archivo de requisitos para instalarlos"  | column -ts $'\t'
+                echo "  -u, --update    realiza los procedimientos para corregir las direcciones de los enlaces simbolicos" | column -ts $'\t'
+                echo "  -h, --help      muestra ayuda" | column -ts $'\t'
+                echo "  e, exit      salir del asistente" | column -ts $'\t'
+            ;;
+            -- ) 
+                shift
+                break 
+            ;;
+            "" ) 
+                echo "Es necesario un argumento" >&2
+                echo "Escriba \"-h\" para ver la ayuda " >&2              
+            ;;
+            * )
+                echo "Argumento equivocado" >&2
+                echo "Escriba \"-h\" para ver la ayuda " >&2
+            ;;
+        esac
+    done
+}
+
+main() {
+    initial_banner
+    #[START] Peticion de archivo requirements
+    while :
+    do
+        case "$1" in
+            -f | --file ) 
+                REQUIREMENTS="$2"
+                install_flow
+                exit_banner 0
+            ;;
+            -u | --update )
+                update_sl_flow
+                exit_banner 0
+            ;;
+            -i | --interactive )
+                interactive_flow
+                break
+            ;;
+            -h | --help )
+                echo "Modo de empleo: ./$(basename $0) OPCION [FICHERO]"
+                echo "Instala los paquetes que se encuentran listados en un archivo de requisitos."
+                echo "En caso de ya existir instalados, se avisa al usuario."
+                echo -e "\nOpciones: "
+                echo "  -f, --file archivo_requirements     se necesita un archivo de requisitos para instalarlos"  | column -ts $'\t'
+                echo "  -u, --update    realiza los procedimientos para corregir as direcciones de los enlaces simbolicos" | column -ts $'\t'
+                echo "  -i, --interactive      modo interactivo" | column -ts $'\t'
+                echo "  -h, --help      muestra ayuda" | column -ts $'\t'
+                echo -e "\nEjemplo: ./$(basename $0) --file requisitos.txt"
+                exit 0
+            ;;
+            -- ) 
+                shift
+                break 
+            ;;
+            "" ) 
+                echo "Es necesario un argumento" >&2
+                echo "Escriba \"./$(basename $0) -h\" para ver la ayuda " >&2
+                exit 1
+                
+            ;;
+            * )
+                echo "Argumento equivocado" >&2
+                echo "Escriba \"./$(basename $0) -h\" para ver la ayuda " >&2
+                exit 1
+                break 
+            ;;
+        esac
+    done
+    #[END] Peticion de archivo requirements
+}
+
+main "$@"
