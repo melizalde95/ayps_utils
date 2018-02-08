@@ -147,7 +147,7 @@ main() {
                 echo "En caso de ya existir instalados, se avisa al usuario."
                 echo -e "\nOpciones: "
                 echo "  -f, --file archivo_requirements     se necesita un archivo de requisitos para instalarlos"  | column -ts $'\t'
-                echo "  -u, --update    realiza los procedimientos para corregir as direcciones de los enlaces simbolicos" | column -ts $'\t'
+                echo "  -u, --update    realiza los procedimientos para corregir las direcciones de los enlaces simbolicos" | column -ts $'\t'
                 echo "  -i, --interactive      modo interactivo" | column -ts $'\t'
                 echo "  -h, --help      muestra ayuda" | column -ts $'\t'
                 echo -e "\nEjemplo: ./$(basename $0) --file requisitos.txt"
