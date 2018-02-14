@@ -42,4 +42,5 @@ Ejemplo:
 ```
 
 #Cambios del framework
-En /src/executables/examples/seria__port.cpp se hizo un cambio para guardar la información en un archivo.
+
+En /src/executables/examples/serial__port.cpp se hizo un cambio para guardar la información en un archivo.
