@@ -41,4 +41,5 @@ Ejemplo:
 ./wizard -sss 2> error.log
 ```
 
-**Esto es un añadido**
+#Cambios del framework
+En /src/executables/examples/seria__port.cpp se hizo un cambio para guardar la información en un archivo.
