@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/ex_oscilloscope.dir/oscilloscope.cpp.o  -o ex_oscilloscope -lpthread -lboost_system -lboost_filesystem -lboost_filesystem -lboost_system -lallegro -lallegro_main -lallegro_image -lallegro_font -lallegro_ttf -lallegro_primitives -lgsl -lgslcblas ../../dsp/liblib_dsp.a ../../core/liblib_core.a -lgsl -lgslcblas 

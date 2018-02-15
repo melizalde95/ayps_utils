@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="LibDSP"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;CMake Files\src\;CMake Files\src\core\;CMake Files\src\dsp\;CMake Files\src\signal_sources\;CMake Files\src\executables\;CMake Files\src\executables\examples\;CMake Files\src\executables\redpitaya\;CMake Files\src\executables\clases\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lib_dsp">
+				<Option output="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/liblib_dsp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug"/>
+					<Add directory="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/core"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 lib_dsp"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lib_dsp/fast">
+				<Option output="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/liblib_dsp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug"/>
+					<Add directory="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/core"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 lib_dsp/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake-build-debug/src/dsp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dfrft_cublas.cpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dfrft_cublas.h">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dfrft_filter.hpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dfrft_gsl.cpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dfrft_gsl.h">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dft.cpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dft.h">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dft_filter.hpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dsp_commons.cpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/dsp_commons.h">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/power_filter.hpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/quadrature_filter.hpp">
+			<Option target="lib_dsp"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/config.h.in">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake_modules/PlatformIntrospection.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/cmake_modules/FindAllegro.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\core\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/core/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\core\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\dsp\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/dsp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\dsp\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/signal_sources/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\signal_sources\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/signal_sources/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\signal_sources\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/executables/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\executables\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/executables/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\executables\examples\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/executables/redpitaya/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\executables\redpitaya\"/>
+		</Unit>
+		<Unit filename="/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/executables/clases/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\executables\clases\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

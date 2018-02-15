@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/ex_simple.dir/simple.cpp.o  -o ex_simple -lpthread 

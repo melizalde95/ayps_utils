@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/clase_2.dir/clase_2.cpp.o  -o clase_2 ../../core/liblib_core.a -lpthread -lboost_system -lboost_filesystem -lboost_thread -lboost_chrono -lboost_date_time -lboost_atomic -lboost_filesystem -lboost_system -lboost_thread -lboost_chrono -lboost_date_time -lboost_atomic 

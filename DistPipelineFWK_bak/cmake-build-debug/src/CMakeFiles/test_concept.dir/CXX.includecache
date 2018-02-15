@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cuau/Documentos/procesamiento_senales/DistPipelineFWK/src/test_concept.cpp
+iostream
+-
+chrono
+-
+boost/asio.hpp
+-
+boost/thread.hpp
+-
+thread
+-
+mutex
+-
+
